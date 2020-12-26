@@ -3,6 +3,8 @@ import axios from 'axios';
 import './Style/Scrolling.css'
 import 'semantic-ui-css/semantic.min.css'
 import {  Table } from 'semantic-ui-react'
+import Loader from './Loader'
+import LoaderComponent from './Loader';
 
 class Scrolling extends React.Component {
     state = {
@@ -13,7 +15,8 @@ class Scrolling extends React.Component {
     fetchUserData = async (page) => {
         const response = await axios.get(`https://randomuser.me/api/?page=${page}&results=10&seed=abc`)
         this.setState({
-            userData:[...this.state.userData,response.data.results]
+            userData:[...this.state.userData,response.data.results],
+            loading:false
         })
         
     }
@@ -33,6 +36,7 @@ class Scrolling extends React.Component {
     
     render(){
                return (<>
+                {this.state.loading && <LoaderComponent/>}
                     <h1>Infinity Scroll</h1>
                    <div onScroll={this.loadMore} className='container'>
                    {this.state && this.state.userData.map((value)=>{
