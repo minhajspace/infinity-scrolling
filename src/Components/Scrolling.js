@@ -2,18 +2,12 @@ import React from 'react';
 import axios from 'axios';
 import './Style/Scrolling.css'
 import 'semantic-ui-css/semantic.min.css'
-import { Header, Image, Table } from 'semantic-ui-react'
-
-
-
+import {  Table } from 'semantic-ui-react'
 
 class Scrolling extends React.Component {
     state = {
         userData:[],
         loading:true,
-        page:1,
-        prevY:0
-
     }
 
     fetchUserData = async (page) => {
@@ -38,10 +32,6 @@ class Scrolling extends React.Component {
    }
     
     render(){
-        
-         
-
- 
                return (<>
                     <h1>Infinity Scroll</h1>
                    <div onScroll={this.loadMore} className='container'>
@@ -77,8 +67,7 @@ class Scrolling extends React.Component {
                        </div>
                        })
                    })}
-                   
-               
+
         </div>
         </>)
  
