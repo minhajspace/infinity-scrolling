@@ -33,10 +33,17 @@ class Scrolling extends React.Component {
            this.fetchUserData(page)
        }
    }
+
+ 
     
     render(){
+
+        const { loading } = this.state;
+        if (loading) {
+            return <LoaderComponent />
+        }
                return (<>
-                {this.state.loading && <LoaderComponent/>}
+               
                     <h1>Infinity Scroll</h1>
                    <div onScroll={this.loadMore} className='container'>
                    {this.state && this.state.userData.map((value)=>{
