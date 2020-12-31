@@ -2,3 +2,20 @@
     height: 1000px;
     overflow: auto;
 }
+
+.main-div{
+   
+    display: flex !important;
+    width :100% !important;
+    height: 100vh!important;
+    flex-flow:row wrap !important ;
+    align-items:center !important;
+    justify-content:center !important;
+   
+   
+}
+
+.item{
+    width: auto !important;
+    height: auto !important;
+}

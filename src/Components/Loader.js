@@ -4,13 +4,17 @@ import './Style/Scrolling.css'
 
 const LoaderComponent = () => {
     return (
-        <div>
+        <div className="main-div">
+            <div className="item">
+
+           
             <Segment>
                 <Dimmer active inverted>
                     <Loader size='massive'>Loading</Loader>
                 </Dimmer>
                 <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />             
             </Segment>
+        </div>
         </div>
     )
 }
